@@ -13,7 +13,7 @@ First, extract 2D images from 3D CT scans and formulate them into 5-folds. Save 
 
 Run `detection/train_rcnn.py` to train the model. It is required to train a model for each fold.
 
-### 3D fusion.
+### 3D Fusion
 We fuse 2D fractures into 3D ones and using self-ensembling augmented inference to calculate the frequency as the confidene of 3D fractures.
 
 Run `detection/test_rcnn.py` to generate 2d detection results with different data augmentation.
@@ -24,7 +24,6 @@ Run `detection/2d_3d/3d_3d_counting.py` to calculate the frequency of 3D detecte
 
 Here is an example of the structure of `out.json`:
 ```python
-3d_result.json structure:
 {
 img_subject:
     {
@@ -40,3 +39,9 @@ img_subject:
     }
 }
 ```
+
+### Bayesian models.
+With the `out.json` generated from the previous step, we use `bayes/run.sh` to get the best results proposed in the paper.
+
+To run the results without Bayesian refinement, we run `bayes/norefine.sh`. \
+To run the results without age variable, we run `bayes/run_noage.sh`.
