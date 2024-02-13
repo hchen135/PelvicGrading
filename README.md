@@ -45,3 +45,5 @@ With the `out.json` generated from the previous step, we use `bayes/run.sh` to g
 
 To run the results without Bayesian refinement, we run `bayes/norefine.sh`. \
 To run the results without age variable, we run `bayes/run_noage.sh`.
+
+Results will be saved in `result_csv_name` in the corresponding python script.
